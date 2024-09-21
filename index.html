@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Kanav Singla Devops Architect</title>
-<!-- <meta http-equiv="refresh" content="0; URL=https://example.com/">
-<link rel="canonical" href="https://example.com/">  -->
+<meta http-equiv="refresh" content="0; URL=https://kanav.io/">
+<link rel="canonical" href="https://kanav.io/">  -->
 
-<!-- <object data="resume.pdf" type="application/pdf" width="100%" height="100vh">
-    <p>Download My <a href="resume.pdf">Resume</a></p>
-  </object> -->
+<style>
+    .pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+    .pdf,
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+   h1,
+    h3 {
+        text-align: center;
+    }
 
-
-
-<script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
-
-<script type="module">
-  // If absolute URL from the remote server is provided, configure the CORS
-  // header on that server.
-  var url = 'https://mksingla93.github.io/resume.pdf';
-
-  // Loaded via <script> tag, create shortcut to access PDF.js exports.
-  var { pdfjsLib } = globalThis;
-
-  // The workerSrc property shall be specified.
-  pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.mjs';
-
-  // Asynchronous download of PDF
-  var loadingTask = pdfjsLib.getDocument(url);
-  loadingTask.promise.then(function(pdf) {
-    console.log('PDF loaded');
-
-    // Fetch the first page
-    var pageNumber = 1;
-    pdf.getPage(pageNumber).then(function(page) {
-      console.log('Page loaded');
-
-      var scale = 1.5;
-      var viewport = page.getViewport({scale: scale});
-
-      // Prepare canvas using PDF page dimensions
-      var canvas = document.getElementById('the-canvas');
-      var context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-
-      // Render PDF page into canvas context
-      var renderContext = {
-        canvasContext: context,
-        viewport: viewport
-      };
-      var renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
-        console.log('Page rendered');
-      });
-    });
-  }, function (reason) {
-    // PDF loading error
-    console.error(reason);
-  });
-</script>
-
-<h1>PDF.js 'Hello, world!' example</h1>
+     
+    
+   
 
 
+    @media only screen and (min-width: 768px) {
+        .mobile {
+            display: block;
+        }
+        .desktop{
+            display: none;
+        }
+    }
 
-<canvas id="the-canvas"></canvas>
+
+    @media only screen and (min-width: 992px) {
+        .mobile {
+            display: none;
+        }
+        .desktop{
+            display: block;
+        }
+    }
+    
+    
+    
+    
+    @media only screen and (max-width: 1200px) {
+        
+    }
+    
+
+    h1 {
+        color: green;
+    }
+</style>
+
+<body>
+        <iframe class="pdf desktop" 
+                src="kanav-resume.pdf"
+            width="800" height="500">
+        </iframe>
+        <center class="mobile"><img  src="resume-1.jpg" width="800" >
+        <img  src="resume-2.jpg" width="800" ></center>
+</body>
+
+</html>
